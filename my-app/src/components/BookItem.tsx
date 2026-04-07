@@ -1,18 +1,25 @@
+import type { Livro } from "../tipos/Livro";
+
 type BookItem = {
-    nome: string,
-    autor: string, 
-    lançamento: number,
+    livro: Livro
 }
 
-const Livro = ({ nome, autor, lançamento } : BookItem) => {
-  return (
-    <>
-    <h1>{nome}</h1>
-    <h2>{autor}</h2>
-    <h4>{lançamento}</h4>
-    </>
-  )
 
+const LivroItem = ({livro} : BookItem) => {
+
+    return (
+        <div>
+            <div>
+                <strong>{livro.nome}</strong>
+            </div>
+            <div>
+                <p>{livro.autor}</p>
+            </div>
+            <div>
+                <p>{livro.ano}</p>
+            </div>
+        </div>
+    )
 }
 
-export default Livro
+export default LivroItem;

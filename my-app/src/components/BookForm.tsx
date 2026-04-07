@@ -1,7 +1,8 @@
 import { useState } from "react";
+import type { Livro } from "../tipos/Livro";
 
 type BookForm = {
-    aoEnviar : () => void;
+    aoEnviar : (livro : Livro) => void;
 }
 
 const FormularioCadastro = ({ aoEnviar } : BookForm) => {
@@ -12,7 +13,13 @@ const FormularioCadastro = ({ aoEnviar } : BookForm) => {
 
     const enviar = (e: React.FormEvent) => {
         e.preventDefault();
-        aoEnviar();  // função para que o botão faça o envio do formulário
+
+        if(!nome || !autor || !ano) return; // para invalidar cadastro se houver algum campo em branco
+
+        aoEnviar({id: 0, nome, autor, ano});  // função para que o botão faça o envio do formulário
+        setNome('');
+        setAutor('');
+        setAno('');
     }
 
     return (
