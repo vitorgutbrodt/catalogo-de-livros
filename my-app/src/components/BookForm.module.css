@@ -1,0 +1,33 @@
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input, .button {
+    text-align: center;
+    margin: 1em;       
+}
+
+.input {
+    max-width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;   
+    background-color: white;
+    color: black;
+    padding: 1em;
+}
+
+.button {
+    max-width: 50%;
+    margin-left: 25%;
+    background-color: cadetblue;
+    padding: 0.5em;
+    border: 0.5em solid cadetblue;
+    border-radius: 0.5em;
+    font-size: larger;   
+}
+
+.button:hover {
+    background-color: rgb(102, 228, 233);
+    border-color: rgb(102, 228, 233);
+}
