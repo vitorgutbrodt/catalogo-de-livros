@@ -6,6 +6,8 @@ type BookItem = {
     aoRemover: (id: string) => void
 }
 
+console.log(styles);
+
 const LivroItem = ({ livro, aoRemover } : BookItem) => {
   
     return (
@@ -20,7 +22,7 @@ const LivroItem = ({ livro, aoRemover } : BookItem) => {
                 <p>{livro.ano}</p>
             </div>
             <div>
-                <button className={styles.button} onClick={() => aoRemover(livro._id)}
+                <button className={styles.removerButton} onClick={() => aoRemover(livro._id!)}
 >
   REMOVER
 </button>

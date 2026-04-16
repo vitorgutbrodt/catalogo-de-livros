@@ -3,9 +3,10 @@ import LivroItem from './BookItem';
 
 type BookList = {
     livros : Livro[];
+    aoRemover: (id: string) => void;
 }
 
-const ListaLivros = ({livros} : BookList) => {
+const ListaLivros = ({ livros, aoRemover } : BookList) => {
 
     if(livros.length === 0)
         return(<p>Nenhum livro registrado</p>)
@@ -13,7 +14,7 @@ const ListaLivros = ({livros} : BookList) => {
     return (
         <div>
             {
-                livros.map(item => (<LivroItem key={item.id} livro={item}/>))
+                livros.map(item => (<LivroItem key={item._id!} livro={item} aoRemover={aoRemover}/>))
             }
         </div>
     )

@@ -1,0 +1,10 @@
+.removerButton {    
+    background-color: crimson;
+    border: 0.5em solid crimson;
+    border-radius: 0.5em;
+}
+
+.removerButton:hover {
+    border-color: rgb(233, 21, 21);
+    background-color: rgb(233, 21, 21);;
+}

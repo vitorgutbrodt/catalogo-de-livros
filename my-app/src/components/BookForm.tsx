@@ -10,14 +10,13 @@ const FormularioCadastro = ({ aoEnviar } : BookForm) => {
 
     const [nome, setNome] = useState('');
     const [autor, setAutor] = useState('');
-    const [ano, setAno] = useState<number>('');
+    const [ano, setAno] = useState<number>();
 
     const enviar = (e: React.FormEvent) => {
         e.preventDefault();
-
         if(!nome || !autor || !ano) return; // para invalidar cadastro se houver algum campo em branco
 
-        aoEnviar({_id: 0, nome, autor, ano});  // função para que o botão faça o envio do formulário
+        aoEnviar({id: 0, nome, autor, ano});  // função para que o botão faça o envio do formulário
         setNome('');
         setAutor('');
         setAno('');
@@ -32,7 +31,7 @@ const FormularioCadastro = ({ aoEnviar } : BookForm) => {
             <input className={styles.input} type="text" placeholder="NOME DO AUTOR"
             value={autor} onChange={(e) => setAutor(e.target.value)}/>
 
-            <input className={styles.input} type="number" placeholder="DATA DE LANÇAMENTO"
+            <input className={styles.input} type="number" placeholder="ANO DE LANÇAMENTO"
             value={ano} onChange={(e) => setAno(e.target.value)}/>
 
             <button className={styles.button} type="submit">CADASTRAR</button>    
